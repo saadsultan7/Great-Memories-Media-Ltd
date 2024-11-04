@@ -23,7 +23,7 @@ export default function HomePage() {
       <Header/>
       <main className="flex-1">
         {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-pink-200 "> */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
+        <section className="w-full py-12 md:py-24 lg:py-32  to-gray-100">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
               <motion.div 
@@ -72,7 +72,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-white">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-100">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-8 lg:grid-cols-3">
               {[

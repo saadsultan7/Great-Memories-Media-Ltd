@@ -3,23 +3,33 @@ import { Link } from 'react-router-dom'
 import { MdAccessTime, MdMail, MdPhone, MdFileUpload } from "react-icons/md"
 import { FaQuoteLeft, FaPrint, FaLeaf, FaGooglePlay, FaApple } from "react-icons/fa"
 export default function Header() {
-  useEffect(() => {
-    if(localStorage.getItem('showtypingtext'))
-    {
-      setTimeout(() => {
-        localStorage.setItem('showtypingtext', 'no');
-      }, 100);
-    }
+  // useEffect(() => {
+  //   if(!localStorage.getItem('showtypingtext'))
+  //   {
+  //     setTimeout(() => {
+  //       console.log('lol')
+  //       localStorage.setItem('showtypingtext', 'yes');
+  //     }, 1000);
+  //   }
     
-   },[])
+  //  },[])
   return (
      <header className="px-4 lg:px-6 h-14 flex items-center">
         <Link className="flex items-center justify-center" to="/">
           <FaPrint className="h-6 w-6" />
           
+          {/* {console.log( 'check this:>',localStorage.getItem('showtypingtext'))}
+          {
+            localStorage.getItem('showtypingtext') ?
+            <div className="text-lg font-mono text-gray-800 ">
+              <span className="m-2 text-xl font-bold">Short Run Printing, Ltd.</span>
+            </div>
+          : */}
           <div className="text-lg font-mono text-gray-800 typing-container">
-            <span className="m-2 text-xl font-bold">Short Run Printing, Ltd.</span>
-          </div>
+
+          <span className="m-2 text-xl font-bold">Great Memories Media Ltd.</span>
+        </div>
+          {/* } */}
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4 relative group" to="/quote">

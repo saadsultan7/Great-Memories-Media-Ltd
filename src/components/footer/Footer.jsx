@@ -7,7 +7,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto text-center text-sm space-y-4">
         <p className="flex items-center justify-center space-x-2">
           <FaPrint />
-          <span>Copyright © 2024 Short Run Printing, Ltd.</span>
+          <span>Copyright © 2024 Great Memories Media Ltd.</span>
         </p>
         <div className="space-x-4">
           <a href="#" className="hover:text-blue-200">Home</a>
