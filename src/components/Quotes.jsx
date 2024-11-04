@@ -5,7 +5,6 @@ import { Button } from './ui/Button'
 import { Card } from './ui/Card'
 import { Badge } from './ui/Badge'
 import { CardContent } from './ui/CardContent'
-import { motion } from 'framer-motion'
 export default function Quotes() {
     const navigate = useNavigate()
   return (

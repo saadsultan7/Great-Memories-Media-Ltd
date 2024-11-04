@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom'
 import Header from './header/Header'
 import image from '../assets/image2.jpg'
 import Footer from './footer/Footer'
+// import '../components/Typing'
+import './Typingtext.css'
 export default function HomePage() {
  const navigate = useNavigate();
 
