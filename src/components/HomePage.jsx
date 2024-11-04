@@ -8,7 +8,6 @@ import { CardContent } from './ui/CardContent'
 import { motion } from 'framer-motion'
 import Quotes from './Quotes'
 import React from 'react'
-import './TypingText.css'
 import { useNavigate } from 'react-router-dom'
 
 import Header from './header/Header'
