@@ -6,12 +6,12 @@ import { Card } from './ui/Card'
 import { Badge } from './ui/Badge'
 import { CardContent } from './ui/CardContent'
 import { motion } from 'framer-motion'
-
+import Quotes from './Quotes'
 import React from 'react'
 import './TypingText.css'
 import { useNavigate } from 'react-router-dom'
-import { FaBook, FaSpinner, FaCopy, FaInfoCircle } from 'react-icons/fa';
-import Header from './header/header'
+
+import Header from './header/Header'
 import image from '../assets/image2.jpg'
 import Footer from './footer/Footer'
 export default function HomePage() {
@@ -77,7 +77,7 @@ export default function HomePage() {
               {[
                 { title: "Quick Turnaround", icon: MdAccessTime,data: "When you need from just a few copies to a thousand, we are your one stop print shop. We have years of experience and the latest technology allowing us to deliver superior quality without breaking your budget. Unlike many print service providers, we have focused specifically on the short run market and will not try to be everybody's everything. We are experts in our field, we will deliver the best product as well as the best overall value."},
                 { title: "Quality Guaranteed", icon: FaPrint,data:"We use only the highest quality papers to insure the highest quality output. Many people think 'Paper is Paper', that can't be further from the truth! We use fresh, ream wrapped, papers designed, and extensively tested, for the digital printing process. These high quality papers allow us a great deal of control in image quality. " },
-                { title: "24/7 Support", icon: MdPhone,data:"We pride ourselves on building one of the simplest to navigate websites available. As you have likely seen, many printing websites can build you a quote, however, a number of them 'conveniently' omit charges like setup fees, file upload fees, and shipping costs. What good is a quote if it's not accurate? Our site generates accurate Quotes, including all fees in less than 30 seconds!. Also, our quotes include all shipping costs associated with doing your print job, so the price you see is the price you pay! Our website lists several delivery options so you can choose the correct delivery date to meet your needs." }
+                { title: "24/7 Support", icon: MdPhone,data:"We pride ourselves on building one of the simplest to navigate websites available. As you have likely seen, many printing websites can build you a quote, however, a number of them 'conveniently' omit charges like setup fees, file upload fees, and shipping costs. What good is a quote if it's not accurate? Our site generates accurate Quotes, including all fees in less." }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -110,77 +110,8 @@ export default function HomePage() {
                 Choose your printing category below to get started. All quotes include shipping and are backed by our quality guarantee.
             </p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          
-              <Card className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                   <FaBook className="w-8 h-8 text-primary" />
-                 </div>
-                    <h2 className="text-xl font-semibold mb-2">Booklets & Catalogs</h2>
-                <p className="text-gray-600 mb-4">
-                  Professional printing for booklets, catalogs, magazines, and zines with various binding options.
-                </p>
-              </div>
-              <div className="space-y-2 space-x-1 mb-6">
-                <Badge variant="secondary">Saddle Stitching</Badge>
-                <Badge variant="secondary">Perfect Binding</Badge>
-                <Badge variant="secondary">Custom Covers</Badge>
-                <Badge variant="secondary">UV Coating</Badge>
-                </div>
-                {/* <Button className="w-full">Get Booklet Quote</Button> */}
-                <Button className="w-full" onClick={() => navigate('/calculator')}  >Get Booklet Quote</Button>
-                </CardContent>
-            </Card>
-          
-          {/* Spiral Bound Books Card */}
-          <Card className="group hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <FaSpinner className="w-8 h-8 text-primary" />
-                </div>
-                <h2 className="text-xl font-semibold mb-2">Spiral Bound Books</h2>
-                <p className="text-gray-600 mb-4">
-                  Durable spiral binding perfect for manuals, workbooks, and presentations.
-                </p>
-              </div>
-              <div className="space-y-2 space-x-1 mb-6">
-                <Badge variant="secondary">Plastic Coil</Badge>
-                <Badge variant="secondary">Custom Covers</Badge>
-                <Badge variant="secondary">Cover Scoring</Badge>
-                <Badge variant="secondary">Multiple Sizes</Badge>
-              </div>
-              <Button className="w-full" onClick={() => navigate('/calculator')}  >Get Spiral Bound Quote</Button>
-            </CardContent>
-          </Card>
-
-          {/* Copy Services Card */}
-          <Card className="group hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <FaCopy className="w-8 h-8 text-primary" />
-                </div>
-                <h2 className="text-xl font-semibold mb-2">Copy Services</h2>
-                <p className="text-gray-600 mb-4">
-                  High-quality color and black & white copies for all your printing needs.
-                </p>
-              </div>
-              <div className="space-y-2 mb-6 space-x-1 " >
-                <Badge variant="secondary">Color Copies</Badge>
-                <Badge variant="secondary">Black & White</Badge>
-                <Badge variant="secondary">Stapled Sets</Badge>
-                <Badge variant="secondary">Folded Pieces</Badge>
-              </div>
-              {/* <Button className="w-full">Get Copy Quote</Button> */}
-              <Button className="w-full" onClick={() => navigate('/calculator')}  >Get Copy Quote</Button>
-            </CardContent>
-          </Card>
-         </div>
+              <Quotes/>
+            
 
             {/* Customer Review Banner */}
             <div className="mt-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-6">

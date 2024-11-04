@@ -1,5 +1,7 @@
 import React from 'react'
-import Header from './header/header'
+// import Header from './header/Header'
+import Header from './header/Header'
+import Footer from './footer/Footer'
 
 export default function Calculator() {
     return (
@@ -162,17 +164,7 @@ export default function Calculator() {
           </main>
     
           {/* Footer */}
-          <footer className="bg-gray-800 text-white mt-8 py-4">
-            <div className="max-w-7xl mx-auto text-center text-sm">
-              <p>Copyright © 2024 Short Run Printing, Ltd.</p>
-              <div className="mt-2">
-                <a href="#" className="hover:text-blue-200">Home</a> |
-                <a href="#" className="hover:text-blue-200"> About Us</a> |
-                <a href="#" className="hover:text-blue-200"> Environmental Impact</a> |
-                <a href="#" className="hover:text-blue-200"> Terms of Service</a>
-              </div>
-            </div>
-          </footer>
+        <Footer/>
         </div>
       )
 }
