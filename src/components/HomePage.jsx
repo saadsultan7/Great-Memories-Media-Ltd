@@ -58,7 +58,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <div className="relative rounded-lg overflow-hidden shadow-xl aspect-ratio-container group">
+                <div className="relative w-11/12 h-96 rounded-lg overflow-hidden shadow-xl group">
                   <img 
                     src={image}
                     alt="Printing services illustration"

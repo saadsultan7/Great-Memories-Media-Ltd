@@ -7,6 +7,7 @@ import { Badge } from './ui/Badge'
 import { CardContent } from './ui/CardContent'
 import { motion } from 'framer-motion'
 export default function Quotes() {
+    const navigate = useNavigate()
   return (
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           
