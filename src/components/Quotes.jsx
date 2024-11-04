@@ -1,5 +1,4 @@
 import React from 'react'
-import './TypingText.css'
 import { useNavigate } from 'react-router-dom'
 import { FaBook, FaSpinner, FaCopy, FaInfoCircle } from 'react-icons/fa';
 import { Button } from './ui/Button'
