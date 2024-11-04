@@ -32,7 +32,7 @@ function Footer() {
           </p>
           <p className="flex items-center justify-center space-x-1">
             <MdMail />
-            <a href="mailto:info@ShortRunPrintingLtd.com" className="hover:text-blue-200">info@ShortRunPrintingLtd.com</a>
+            <a href="mailto:info@GreatMemoriesMediaLtd.com" className="hover:text-blue-200">info@ShortRunPrintingLtd.com</a>
           </p>
         </div>
       </div>
