@@ -1,41 +1,40 @@
+'use client'
+
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+
 export default function Calculator() {
-    const [price, setPrice] = useState(null); // State to store the price
+    const [price, setPrice] = useState(null);
+    const [zipCode, setZipCode] = useState('');
+    const [deliveryTime, setDeliveryTime] = useState('Today by 12:00PM MST');
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Set a dummy price here, e.g., "$150.00"
         setPrice("$150.00");
-        console.log('ll')
-        toast.success('its successfully submited', { autoClose: 2000 });
-
+        toast.success('It\'s successfully submitted', { autoClose: 2000 });
     };
 
     return (
-
         <div className="min-h-screen bg-gray-50">
-        <ToastContainer
-            position="top-center"
-            hideProgressBar={true}
-            newestOnTop={true}
-            autoClose={false}
-            pauseOnFocusLoss={false}
-            role="alert"
-            theme="light"
-            className="mx-auto mt-4 flex w-[90%] max-w-[500px] flex-col items-center gap-3 px-3 sm:mt-0 sm:w-max sm:min-w-[300px] sm:gap-0 sm:px-0 md:w-[200px]"
-            toastClassName="text-primary-500 gap-2"
-          />
-            <Header/>
+            <ToastContainer
+                position="top-center"
+                hideProgressBar={true}
+                newestOnTop={true}
+                autoClose={false}
+                pauseOnFocusLoss={false}
+                role="alert"
+                theme="light"
+                className="mx-auto mt-4 flex w-[90%] max-w-[500px] flex-col items-center gap-3 px-3 sm:mt-0 sm:w-max sm:min-w-[300px] sm:gap-0 sm:px-0 md:w-[200px]"
+                toastClassName="text-primary-500 gap-2"
+            />
+            <Header />
             
             <main className="max-w-7xl mx-auto p-8">
                 <div className="bg-white rounded-lg shadow-lg p-6">
@@ -141,6 +140,14 @@ export default function Calculator() {
                                                 <input type="radio" name="paper" value="gloss70" className="mr-2" defaultChecked />
                                                 <span>House Laser Gloss 70# TEXT</span>
                                             </label>
+                                            <label className="flex items-center">
+                                                <input type="radio" name="paper" value="matte100" className="mr-2" />
+                                                <span>House Laser Matte 100# TEXT</span>
+                                            </label>
+                                            <label className="flex items-center">
+                                                <input type="radio" name="paper" value="matte80" className="mr-2" />
+                                                <span>House Laser Matte 80# TEXT</span>
+                                            </label>
                                         </div>
                                     </div>
                                     
@@ -154,6 +161,14 @@ export default function Calculator() {
                                             <label className="flex items-center">
                                                 <input type="radio" name="paper" value="opaque80" className="mr-2" />
                                                 <span>House Opaque 80# TEXT</span>
+                                            </label>
+                                            <label className="flex items-center">
+                                                <input type="radio" name="paper" value="opaque70" className="mr-2" />
+                                                <span>House Opaque 70# TEXT</span>
+                                            </label>
+                                            <label className="flex items-center">
+                                                <input type="radio" name="paper" value="opaque60" className="mr-2" />
+                                                <span>House Opaque 60# TEXT</span>
                                             </label>
                                         </div>
                                     </div>
@@ -173,6 +188,40 @@ export default function Calculator() {
                                         <span>Monochrome (Black & White)</span>
                                     </label>
                                 </div>
+                            </div>
+
+                            {/* Zip Code field */}
+                            <div className="mb-4">
+                                <label htmlFor="zipCode" className="block mb-2 font-medium">Ship To Zip Code:</label>
+                                <input 
+                                    type="text" 
+                                    id="zipCode" 
+                                    value={zipCode}
+                                    onChange={(e) => setZipCode(e.target.value)}
+                                    className="border rounded px-3 py-2 w-32"
+                                    maxLength={5}
+                                    pattern="[0-9]{5}"
+                                    required
+                                />
+                                <p className="text-sm text-gray-600 mt-1">(Only U.S. Delivery Available At This Time.)</p>
+                            </div>
+
+                            {/* Delivery Time field */}
+                            <div className="mb-4">
+                                <label htmlFor="deliveryTime" className="block mb-2 font-medium">When Will Files Be Ready to Upload?</label>
+                                <select 
+                                    id="deliveryTime"
+                                    value={deliveryTime}
+                                    onChange={(e) => setDeliveryTime(e.target.value)}
+                                    className="border rounded px-3 py-2 w-full max-w-md"
+                                    required
+                                >
+                                    <option value="Today by 12:00PM MST">Today by 12:00PM MST</option>
+                                    <option value="Tomorrow by 12:00PM MST">Tomorrow by 12:00PM MST</option>
+                                    <option value="In 2-3 days">In 2-3 days</option>
+                                    <option value="In a week">In a week</option>
+                                </select>
+                                <p className="text-sm text-gray-600 mt-1">This is used to determine arrival times for shipping your project.</p>
                             </div>
 
                             {/* Email */}
@@ -197,7 +246,7 @@ export default function Calculator() {
                 </div>
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
-    )
+    );
 }
