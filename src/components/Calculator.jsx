@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 export default function Calculator() {
     const [price, setPrice] = useState(null); // State to store the price
 
@@ -14,10 +16,25 @@ export default function Calculator() {
         e.preventDefault();
         // Set a dummy price here, e.g., "$150.00"
         setPrice("$150.00");
+        console.log('ll')
+        toast.success('its successfully submited', { autoClose: 2000 });
+
     };
 
     return (
+
         <div className="min-h-screen bg-gray-50">
+        <ToastContainer
+            position="top-center"
+            hideProgressBar={true}
+            newestOnTop={true}
+            autoClose={false}
+            pauseOnFocusLoss={false}
+            role="alert"
+            theme="light"
+            className="mx-auto mt-4 flex w-[90%] max-w-[500px] flex-col items-center gap-3 px-3 sm:mt-0 sm:w-max sm:min-w-[300px] sm:gap-0 sm:px-0 md:w-[200px]"
+            toastClassName="text-primary-500 gap-2"
+          />
             <Header/>
             
             <main className="max-w-7xl mx-auto p-8">
@@ -29,7 +46,7 @@ export default function Calculator() {
                     {/* Benefits Section */}
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                         <div className="bg-gray-100 p-4 rounded">
-                            <h3 className="font-bold text-lg mb-4">10 Great Reasons to use Short Run Printing, Ltd.:</h3>
+                            <h3 className="font-bold text-lg mb-4">10 Great Reasons to use Great Memories Media Ltd:</h3>
                             <ol className="list-decimal list-inside space-y-2">
                                 <li>Printed in USA (We are located in Sunny Phoenix, AZ!)</li>
                                 <li>Family Owned and Operated!</li>
